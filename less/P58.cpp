@@ -17,6 +17,7 @@ int main()
 			<< "1: Init price\n"
 			<< "2: Load price\n"
 			<< "3: Show price\n"
+			<< "3: Shows price\n"
 			<< "0: Exit\n";
 
 		choice = _getch();
@@ -40,6 +41,9 @@ int main()
 		case 51:  // '3'
 			price -> show();
 			break;
+		case 52:  // '3'
+			price -> show_by_price_ascending();
+			break;
 		case 48:  // '0'
 			return 0;
 
@@ -62,9 +66,9 @@ int main()
 
 [ПК]    -- git init -- [git]
 Project(P58)|
-   sours	|
-   header	|
-   resouce	x
+   sours	|			   source	|	git
+   header	|	git add    headers	|   comit		push
+   resouce	x			   resources|   -m "message" -->
    bin		x
 
    Відміність проєкту та репозиторію - репозиторій це частина проєтку до якої
@@ -73,6 +77,20 @@ Project(P58)|
    Ця відмінність задається у файлі ".gitignor"
 
 
+   ...................................................
 
+   Якщо на пк немає прокту то здійснюеться клонування 
+   - запускаемо студію авторитизуємось через git
+   -вибираємо clone repository
+   - натискаемо  Github і знаходимо репозиторій або ссилку на який нам потрібен 
+   - клонуемо та переходим до проєкту
 
-*/
+   Якщо проєкт є але в старій версії то
+   -відкриваємо проєкт
+   - відкриваємо View
+   - знаходимо кнопку pull
+   -натискаємо 
+   
+   
+   
+   */

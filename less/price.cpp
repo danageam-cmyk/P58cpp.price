@@ -71,3 +71,45 @@ void Price::show() const {
 	}
 }
 
+void Price::show_by_price_ascending() {
+	
+
+	if (first == NULL) {
+		std::cout << "Price is empty" << std::endl;
+		return;
+	}
+	if (first->next == NULL) {
+		std::cout << first->product.to_string() << std::endl;
+		return;
+	}
+	bool is_ordered;
+	do {
+		is_ordered = true;
+	
+	ListNode* node = first;
+	if (node->product.price > node->next->product.price) {
+		first->next = first->next->next;
+
+
+		ListNode* tmp = first ->next;
+		first->next = first->next->next;
+		first->next->next = first;
+		node = first = tmp;
+		is_ordered = false;
+	}
+	while (1) {
+		ListNode* tmp = node->next;
+		if (node->next-> product.price > node->next-> next-> product.price) {
+			//Порядок не правильний - міняемо
+			node->next = node->next->next; // p1.next
+			node->next->next = node->next->next->next; // p2.next = p3.next
+			node->next->next ->next = tmp; //p3.next = p2
+		}
+		    node = tmp;
+
+		}
+	} while (!is_ordered);
+	
+	// Відображення передаємо на іний метод
+	show();
+}
