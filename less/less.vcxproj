@@ -139,7 +139,13 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="less.cpp" />
+    <ClCompile Include="P58.cpp" />
+    <ClCompile Include="price.cpp" />
+    <ClCompile Include="product.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="price.h" />
+    <ClInclude Include="product.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

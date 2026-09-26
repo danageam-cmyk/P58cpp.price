@@ -41,7 +41,7 @@ int main()
 			price -> show();
 			break;
 		case 48:  // '0'
-			return ]
+			return 0;
 
 		default:
 			std::cout << "Invalid choice" << std::endl;
@@ -52,6 +52,27 @@ int main()
 
 
 
-	std::string = "Hello i am Daniel"
+	std::string str = "Hello i am Daniel";
 	return 0;
 }
+
+
+
+/*
+
+[ПК]    -- git init -- [git]
+Project(P58)|
+   sours	|
+   header	|
+   resouce	x
+   bin		x
+
+   Відміність проєкту та репозиторію - репозиторій це частина проєтку до якої
+   входить лише, що неможна взяти з загальних джерел або створити 
+   компіляцією чи виконання проєкту.
+   Ця відмінність задається у файлі ".gitignor"
+
+
+
+
+*/
