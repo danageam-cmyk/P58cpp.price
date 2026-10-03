@@ -20,7 +20,7 @@ int main()
 			<< "3: Shows price\n"
 			<< "0: Exit\n";
 
-		choice = _getch();
+		choice = _getch();///
 		switch (choice) {
 		case 49:  // '1'
 			if (price -> init()) {
