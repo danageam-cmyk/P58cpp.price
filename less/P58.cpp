@@ -17,7 +17,10 @@ int main()
 			<< "1: Init price\n"
 			<< "2: Load price\n"
 			<< "3: Show price\n"
-			<< "3: Shows price\n"
+			<< "4: Price ascending\n"
+			<< "5: Price descending\n"
+			<< "6: discount ascending\n"
+			<< "7: discount descending\n"
 			<< "0: Exit\n";
 
 		choice = _getch();///
@@ -41,9 +44,18 @@ int main()
 		case 51:  // '3'
 			price -> show();
 			break;
-		case 52:  // '3'
+		case 52:  // '4'
 			price -> show_by_price_ascending();
 			break;
+		case 53: // '5'
+			price->show_by_price_descending();
+				break;
+		case 54: // '6'
+				price->show_by_discount_ascending();
+				break;
+		case 55: // '7'
+			price->show_by_discount_descending();
+				break;
 		case 48:  // '0'
 			return 0;
 
@@ -56,7 +68,6 @@ int main()
 
 
 
-	std::string str = "Hello i am Daniel";
 	return 0;
 }
 
@@ -92,5 +103,15 @@ Project(P58)|
    -натискаємо 
    
    
-   
+	конфлікти виникають коли різні гілки (зміни в різних джерелах) намагаються 
+	внести дані що суперечатьь один іншому. Наприклад
+	було внесенно зміни в один ш той самий файл
+	Злиття (Marge) - процес узгодження конфліктів прийняття підсумково версії
+	у VS для цього э кнопка Merge editer якщо гылки вносять зміни в різні файли то 
+	злиття здійснюються без конфліктів проте примій PUSH може бути
+	відхилений якщо в репозиторії є зміни які не були завантажені на ПК
+
+		
+
+
    */

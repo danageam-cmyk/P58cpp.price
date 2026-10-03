@@ -98,18 +98,113 @@ void Price::show_by_price_ascending() {
 		is_ordered = false;
 	}
 	while (1) {
-		ListNode* tmp = node->next;
-		if (node->next-> product.price > node->next-> next-> product.price) {
-			//Порядок не правильний - міняемо
-			node->next = node->next->next; // p1.next
-			node->next->next = node->next->next->next; // p2.next = p3.next
-			node->next->next ->next = tmp; //p3.next = p2
-		}
-		    node = tmp;
+		//ListNode* tmp = node->next;
+		//if (node->next-> product.price > node->next-> next-> product.price) {
+		//	//Порядок не правильний - міняемо
+		//	node->next = node->next->next; // p1.next
+		//	node->next->next = node->next->next->next; // p2.next = p3.next,
+			ListNode* tmp = node->next;
+			ListNode* n2 = node->next;
+			ListNode* n3 = n2->next;
+			ListNode* n4 = n3->next;
+			node->next = n3;
+			n3->next = n2;
+			n2->next = n4;
+			node->next = tmp->next;
+			tmp->next = tmp->next->next;
 
+		
+		node->next = node->next->next;
+		
 		}
 	} while (!is_ordered);
-	
-	// Відображення передаємо на іний метод
+	show();
+}
+///////////////////////////////////////////////
+
+void Price::show_by_price_descending() {
+	if (first == NULL) {
+		std::cout << "Price is empty" << std::endl;
+		return;
+	}
+
+	bool swapped;
+
+	do {
+		swapped = false;
+		ListNode* node = first;
+
+		while (node->next != NULL) {
+			if (node->product.price < node->next->product.price) {
+				Product temp = node->product;
+				node->product = node->next->product;
+				node->next->product = temp;
+				swapped = true;
+			}
+
+			node = node->next;
+		}
+	} while (swapped);
+
+	show();
+}
+
+
+void Price::show_by_discount_ascending() {
+	if (first == NULL) {
+		std::cout << "Price is empty" << std::endl;
+		return;
+	}
+
+	bool swapped;
+
+	do {
+		swapped = false;
+		ListNode* node = first;
+
+		while (node->next != NULL) {
+			if (node->product.discount_percent >
+				node->next->product.discount_percent) {
+
+				Product temp = node->product;
+				node->product = node->next->product;
+				node->next->product = temp;
+				swapped = true;
+			}
+
+			node = node->next;
+		}
+	} while (swapped);
+
+	show();
+}
+
+
+void Price::show_by_discount_descending() {
+	if (first == NULL) {
+		std::cout << "Price is empty" << std::endl;
+		return;
+	}
+
+	bool swapped;
+
+	do {
+		swapped = false;
+		ListNode* node = first;
+
+		while (node->next != NULL) {
+			if (node->product.discount_percent <
+				node->next->product.discount_percent) {
+
+				Product temp = node->product;
+				node->product = node->next->product;
+				node->next->product = temp;
+				swapped = true;
+			}
+
+			node = node->next;
+		}
+	} while (swapped);
+
 	show();
 }
