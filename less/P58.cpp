@@ -21,6 +21,7 @@ int main()
 			<< "5: Price descending\n"
 			<< "6: discount ascending\n"
 			<< "7: discount descending\n"
+			<< "8: Show by popularity\n"
 			<< "0: Exit\n";
 
 		choice = _getch();///
@@ -56,6 +57,9 @@ int main()
 		case 55: // '7'
 			price->show_by_discount_descending();
 				break;
+		case 56: // '8'
+			price->show_by_order();
+			break;
 		case 48:  // '0'
 			return 0;
 
@@ -63,10 +67,6 @@ int main()
 			std::cout << "Invalid choice" << std::endl;
 		}
 	}
-
-
-
-
 
 	return 0;
 }

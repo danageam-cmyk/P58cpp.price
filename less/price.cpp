@@ -42,7 +42,11 @@ bool Price::load() {
 		} while (first);  // while (first != NULL)
 	}
 	Product product;
+	int order = 1;
+
 	while (product.load_from_file(file)) {
+		product.order = order++;
+
 		if (last == NULL) {
 			first = last = new ListNode;
 			last->product = product;
@@ -199,6 +203,35 @@ void Price::show_by_discount_descending() {
 				Product temp = node->product;
 				node->product = node->next->product;
 				node->next->product = temp;
+				swapped = true;
+			}
+
+			node = node->next;
+		}
+	} while (swapped);
+
+	show();
+}
+
+
+void Price::show_by_order() {
+	if (first == NULL) {
+		std::cout << "Price is empty" << std::endl;
+		return;
+	}
+
+	bool swapped;
+
+	do {
+		swapped = false;
+		ListNode* node = first;
+
+		while (node->next != NULL) {
+			if (node->product.order < node->next->product.order) {
+				Product temp = node->product;
+				node->product = node->next->product;
+				node->next->product = temp;
+
 				swapped = true;
 			}
 

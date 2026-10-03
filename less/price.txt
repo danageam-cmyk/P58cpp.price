@@ -1,7 +1,7 @@
 Black Pencil
 14.95
 20
-0
+87
 Blue Pen
 19.95
 25
@@ -9,7 +9,7 @@ Blue Pen
 Green Whiteboard Marker
 17.5
 10
-10
+17
 Red Pen
 37.5
 5
